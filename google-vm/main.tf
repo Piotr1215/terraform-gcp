@@ -1,4 +1,5 @@
 provider "google" {
+  credentials = "${file("..\\TerraformKey.json")}"
   project = "atos-dev-254809"
   region  = "europe-west3"
   zone    = "europe-west3-a"
@@ -20,7 +21,6 @@ resource "google_compute_instance" "vm_instance" {
     }
   }
 }
-
 resource "google_compute_network" "vpc_network" {
   name                    = "terraform-network"
   auto_create_subnetworks = "true"
