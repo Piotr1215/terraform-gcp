@@ -2,6 +2,5 @@ TerraformKey.json
 
 .terraform
 
-*.tfstate
 *.backup
 *.info
