@@ -1,8 +1,8 @@
 provider "google" {
   credentials = "${file("..\\TerraformKey.json")}"
-  project = "atos-dev-254809"
-  region  = "europe-west3"
-  zone    = "europe-west3-a"
+  project     = "atos-dev-254809"
+  region      = "europe-west3"
+  zone        = "europe-west3-a"
 }
 
 resource "google_container_cluster" "primary" {
@@ -39,4 +39,8 @@ resource "google_container_node_pool" "primary_preemptible_nodes" {
       "https://www.googleapis.com/auth/monitoring",
     ]
   }
+
 }
+  output "name" {
+    value = "${google_container_cluster.primary.name}"
+  }
