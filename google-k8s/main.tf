@@ -24,7 +24,7 @@ resource "google_container_node_pool" "primary_preemptible_nodes" {
   name       = "atos-node-pool"
   location   = "europe-west3-a"
   cluster    = "${google_container_cluster.primary.name}"
-  node_count = 1
+  node_count = 3
 
   node_config {
     preemptible  = true
