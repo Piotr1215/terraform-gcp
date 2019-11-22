@@ -17,7 +17,7 @@ variable "cluster_zone" {
 }
 
 variable "cluster_k8s_version" {
-  default = "1.14.7-gke.14"
+  default = "1.14.8-gke.17"
 }
 
 variable "initial_node_count" {
