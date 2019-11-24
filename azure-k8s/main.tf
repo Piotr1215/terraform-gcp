@@ -1,13 +1,13 @@
 resource "azurerm_resource_group" "atosk8s" {
-  name     = "${var.prefix}-k8s-resources"
-  location = "${var.location}"
+  name     = "var.prefix-k8s-resources"
+  location = "var.location"
 }
 
 resource "azurerm_kubernetes_cluster" "atosk8s" {
-  name                = "${var.prefix}-k8s"
-  location            = "${azurerm_resource_group.atosk8s.location}"
-  resource_group_name = "${azurerm_resource_group.atosk8s.name}"
-  dns_prefix          = "${var.prefix}-k8s"
+  name                = "var.prefix-k8s"
+  location            = "azurerm_resource_group.atosk8s.location"
+  resource_group_name = "azurerm_resource_group.atosk8s.name"
+  dns_prefix          = "var.prefix-k8s"
 
   agent_pool_profile {
     name            = "default"
@@ -18,8 +18,8 @@ resource "azurerm_kubernetes_cluster" "atosk8s" {
   }
 
   service_principal {
-    client_id     = "${var.kubernetes_client_id}"
-    client_secret = "${file("..\\azure-secret.txt")}"
+    client_id     = "var.kubernetes_client_id"
+    client_secret = "file(..\\azure-secret.txt)"
   }
 
   tags = {
