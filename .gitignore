@@ -2,6 +2,11 @@ TerraformKey.json
 azure-secret.txt
 
 .terraform
+# .tfstate files
+*.tfstate
+*.tfstate.*
 
 *.backup
 *.info
+
+*.plan
