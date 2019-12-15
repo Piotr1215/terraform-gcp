@@ -8,5 +8,5 @@ azure-secret.txt
 
 *.backup
 *.info
-
-*.plan
+google-k8s/gke.plan
+google-k8s/terraform.tfstate
