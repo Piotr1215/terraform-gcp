@@ -5,6 +5,7 @@ azure-secret.txt
 # .tfstate files
 *.tfstate
 *.tfstate.*
+*.plan
 
 *.backup
 *.info
